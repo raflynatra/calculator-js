@@ -17,8 +17,14 @@ function clearCalculator() {
 }
 
 function deleteNumber() {
-  let del = document.querySelector("#displayNumber").innerText;
-  calculator.displayNumber = del.substr(0, del.length - 1);
+  let number = document.querySelector("#displayNumber").innerText;
+  let deletedNumber = number.substr(0, number.length - 1);
+
+  if (deletedNumber === "") {
+    calculator.displayNumber = "0";
+  } else {
+    calculator.displayNumber = deletedNumber;
+  }
 }
 
 function inputDigit(digit) {
